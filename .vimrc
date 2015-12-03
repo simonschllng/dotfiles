@@ -15,6 +15,7 @@ Plugin 'rking/ag.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'wookiehangover/jshint.vim'
+Plugin 'joshdick/onedark.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,6 +46,7 @@ set softtabstop=2   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
 
 "# UI Config
+colorscheme onedark
 set number              " show line numbers
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
