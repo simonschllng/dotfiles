@@ -18,13 +18,13 @@ alias c="cd .."
 alias q=exit
 alias diskspace="du -S | sort -n -r |more"
 
-alias android-connect="mtpfs -o allow_other /media/GalaxyS3"
-alias android-disconnect="fusermount -u /media/GalaxyS3"
-
 alias ..="cd .."
 alias ..2="cd ../.."
 alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 
+# Terminal bell
+alias beep="echo -ne '\007'"
+alias beep-vol="xset b $1"
 

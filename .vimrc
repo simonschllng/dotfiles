@@ -16,6 +16,11 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'wookiehangover/jshint.vim'
 Plugin 'joshdick/onedark.vim'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'Townk/vim-autoclose'
+Plugin 'vim-scripts/closetag.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -37,22 +42,28 @@ filetype plugin indent on    " required
 
 "# General
 let mapleader = ","
-nnoremap ö [
-nnoremap ä ]
+nnoremap ö <c-[>
+nnoremap ä <c-]>
+set pastetoggle=<F2>
+"set autochdir
 
 "# Spaces & Tabs
+set shiftwidth=2
 set tabstop=2       " number of visual spaces per TAB
 set softtabstop=2   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
 
 "# UI Config
 colorscheme onedark
+highlight TabLineSel term=underline ctermbg=136 guibg=#2C323B ctermfg=White guifg=#eeeeee
+highlight Search ctermbg=139 ctermfg=0
+highlight IncSearch ctermbg=139 ctermfg=0
 set number              " show line numbers
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
 filetype indent on      " load filetype-specific indent files
 set wildmenu            " visual autocomplete for command menu
-set lazyredraw          " redraw only when we need to.
+"set lazyredraw          " redraw only when we need to.
 set showmatch           " highlight matching [{()}]
 
 "# Searching
@@ -93,3 +104,10 @@ let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
+"# Open files
+map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>t :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
+
+"# Markdown
+let g:vim_markdown_folding_disabled=1

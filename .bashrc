@@ -96,6 +96,9 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # Add fullpath command
 alias fullpath='readlink -e'
 
+# Open markdown in the browser
+alias md=google-chrome
+
 #Provide autocompletion for custom scripts
 source /home/simon/bin/_workflow-autocomplete.sh
 
@@ -130,3 +133,13 @@ source ~/.rvm/scripts/rvm
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export TERM=xterm-256color
+export NODE_PATH=/usr/lib/nodejs:/usr/lib/node_modules:/usr/share/javascript:/home/simon/.npm-global/lib/node_modules
+
+
+GIT_PROMPT_ONLY_IN_REPO=1
+GIT_PROMPT_THEME=Default_Ubuntu
+source ~/.bash-git-prompt/gitprompt.sh
+
+# Terminal bell
+[ "$DISPLAY" ] && xset b 50 # 50% volume
+
